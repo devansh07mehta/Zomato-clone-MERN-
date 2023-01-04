@@ -5,7 +5,7 @@ import { MenuModel } from "../../database/menu";
 const Router = express.Router();
 
 /**
- * Route: /menu/list/:_id
+ * Route: /list/:_id
  * Description: Get all the menu lists for the given restaurant based on the restaurant id
  * Params: _id
  * Access: Public
@@ -18,7 +18,7 @@ Router.get("/list/:_id", async (req, res) => {
         const menus = await MenuModel.findById(_id);
 
         if (!menus) {
-            return res.status(404).json({ error: "No menu presnt for the given restaurant" });
+            return res.status(404).json({ error: "No menu present for the given restaurant" });
         }
         return res.status(200).json({ menus });
     } catch (error) {
@@ -27,7 +27,7 @@ Router.get("/list/:_id", async (req, res) => {
 });
 
 /**
- * Route: menu/image/:_id
+ * Route: /image/:_id
  * Description: Get all the menu images with their restaurant ids
  * Params: _id
  * Acess: Public
