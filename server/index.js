@@ -14,6 +14,7 @@ import Restaurant from "./api/restaurant";
 import User from "./api/user";
 import Menu from "./api/menu";
 import Order from "./api/order";
+import Review from "./api/review";
 
 dotenv.config();
 
@@ -48,6 +49,9 @@ zomato.use("/menu", Menu);
 
 // /order
 zomato.use("/order", Order);
+
+// /review
+zomato.use("/review", Review);
 
 const PORT = 4000
 

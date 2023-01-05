@@ -44,7 +44,7 @@ Router.put("/new",
         try {
             const { user } = req;
             const { orderDetails } = req.body;
-            const addNewOrder = await OrderModel.findByIdAndUpdate(
+            const addNewOrder = await OrderModel.findOneAndUpdate(
                 {
                     user: user._id
                 },
