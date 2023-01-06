@@ -1,6 +1,7 @@
 import express from "express";
 
 import { FoodModel } from "../../database/food";
+import { ValidateCategory, ValidateId } from "../../validation/common.validation";
 
 const Router = express.Router();
 
@@ -15,6 +16,7 @@ const Router = express.Router();
 Router.get("/:_id", async (req, res) => {
     try {
         const { _id } = req.params;
+        await ValidateId(req.params);
         const food = await FoodModel.findById(_id);
         if (!food) {
             return res.status(404).json({ message: "Food item doesn't exist!!" });
@@ -36,6 +38,7 @@ Router.get("/:_id", async (req, res) => {
 Router.get("/r/:_id", async (req, res) => {
     try {
         const { _id } = req.params;
+        await ValidateId(req.params);
         const foods = await FoodModel.find({
             restaurant: _id
         });
@@ -56,9 +59,10 @@ Router.get("/r/:_id", async (req, res) => {
  * Method: Get
  */
 
-Router.get("/c/category", async (req, res) => {
+Router.get("/c/:category", async (req, res) => {
     try {
         const { category } = req.params;
+        await ValidateCategory(req.params);
         const foods = await FoodModel.find({
             category: { $regex: category, $options: "i" }
             // /c/veg
