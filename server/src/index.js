@@ -4,6 +4,7 @@ import passport from "passport";
 import session from "express-session";
 
 import PrivateRouteConfig from "./config/route.config";
+import googleAuthConfig from "./config/google.config";
 
 // Database Connection
 import ConnectDB from "./database/connection";
@@ -15,11 +16,14 @@ import User from "./api/user";
 import Menu from "./api/menu";
 import Order from "./api/order";
 import Review from "./api/review";
+import Image from "./api/image";
 
 dotenv.config();
 
-const zomato = express();
 PrivateRouteConfig(passport); //Call the private route
+googleAuthConfig(passport);
+
+const zomato = express();
 
 zomato.use(express.json());
 zomato.use(session({ secret: "ZomatoApp" }));
@@ -52,6 +56,9 @@ zomato.use("/order", Order);
 
 // /review
 zomato.use("/review", Review);
+
+// /image
+zomato.use("/image", Image);
 
 const PORT = 4000
 
