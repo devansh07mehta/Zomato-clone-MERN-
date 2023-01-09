@@ -24,6 +24,7 @@ Router.post("/signin", async (req, res) => {
         await ValidateSignin(req.body.credentials);
         const user = await UserModel.findByEmailAndPassword(req.body.credentials);
         const token = user.generateJwtToken();
+
         return res.status(200).json({ token, status: "Success" });
     } catch (error) {
         return res.status(500).json({ error: error.message });
