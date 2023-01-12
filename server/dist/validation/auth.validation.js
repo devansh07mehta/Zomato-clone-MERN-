@@ -8,7 +8,7 @@ var _joi = _interopRequireDefault(require("joi"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const ValidateSignup = userData => {
   const Schema = _joi.default.object({
-    fullname: _joi.default.string().required().min(5),
+    fullname: _joi.default.string().required().min(20),
     email: _joi.default.string().email().required(),
     password: _joi.default.string().pattern(new RegExp("^[a-zA-Z0-9]{3,30}$")),
     address: _joi.default.array().items(_joi.default.object({
