@@ -1,10 +1,12 @@
 {
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "jsonwebtoken": "^9.0.0",
-    "mongoose": "^6.8.2"
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel ./src -d dist",
+    "start": "npm run build && node dist/index.js",
+    "dev": "nodemon --exec babel-node ./src/index.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.20.7",
@@ -13,9 +15,20 @@
     "@babel/preset-env": "^7.20.2",
     "nodemon": "^2.0.20"
   },
-  "scripts": {
-    "build": "babel index.js -d dist",
-    "start": "npm run build && node dist/index.js",
-    "dev": "nodemon --exec babel-node index.js"
+  "dependencies": {
+    "aws-sdk": "^2.1290.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "helmet": "^6.0.1",
+    "joi": "^17.7.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.8.2",
+    "multer": "^1.4.5-lts.1",
+    "passport": "^0.6.0",
+    "passport-google-oauth2": "^0.2.0",
+    "passport-jwt": "^4.0.1"
   }
 }
