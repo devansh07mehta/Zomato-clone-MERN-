@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 
 const UserSchema = new mongoose.Schema(
     {
-        fullname: { type: String, required: true },
+        fullname: { type: String },
         email: { type: String, required: true },
         password: { type: String },
         address: [{ detail: { type: String }, for: { type: String } }],
@@ -21,23 +21,23 @@ UserSchema.methods.generateJwtToken = function () {
 };
 
 // helper functions
-UserSchema.statics.findByEmailAndPhone = async (email, phoneNumber) => {
+UserSchema.statics.findByEmailAndPhone = async ({ email, phoneNumber }) => {
     const checkUserByEmail = await UserModel.findOne({ email });
     const checkUserByPhone = await UserModel.findOne({ phoneNumber });
 
     if (checkUserByEmail || checkUserByPhone) {
-        throw new Error("User already exists!!");
+        throw new Error("User already exists !!!");
     }
-    return false
+    return false;
 };
 
-UserSchema.statics.findByEmailAndPassword = async (email, password) => { 
+UserSchema.statics.findByEmailAndPassword = async ({ email, password }) => {
     const user = await UserModel.findOne({ email });
-    if (!user) throw new Error("User doesn't exits!!");
+    if (!user) throw new Error("User doesn't exist !!!");
 
     // Compare Password
     const doesPasswordMatch = await bcrypt.compare(password, user.password)
-    if (!doesPasswordMatch) throw new Error("Invalid Credentials");
+    if (!doesPasswordMatch) throw new Error("Invalid Credentials !!!");
 
     return user;
 };

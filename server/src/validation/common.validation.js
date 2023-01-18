@@ -13,10 +13,3 @@ export const ValidateCategory = (category) => {
     });
     return Schema.validateAsync(category);
 };
-
-export const ValidateSearchString = (searchString) => {
-    const Schema = joi.object({
-        searchString: joi.string().required()
-    });
-    return Schema.validateAsync(searchString);
-}

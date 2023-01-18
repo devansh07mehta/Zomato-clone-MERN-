@@ -30,7 +30,7 @@ Router.get("/",
 
 /**
  * Route: /:_id
- * Description: Get user data
+ * Description: Get user data (For the review system)
  * Params: _id
  * Access: Public
  * Method: GET
@@ -43,7 +43,8 @@ Router.get("/:_id", async (req, res) => {
         const getUser = await UserModel.findById(_id);
         const { fullName } = getUser;
 
-        if (!getUser) return res.status(404).json({ error: "User not found by this particular id" });
+        if (!getUser)
+            return res.status(404).json({ error: "User not found by this particular id" });
         return res.status(200).json({ user: { fullName } });
 
     } catch (error) {
@@ -69,7 +70,7 @@ Router.put("/update/:_id",
 
             userData.password = undefined;
 
-            const updateUserData = await UserModel.findById(_id, 
+            const updateUserData = await UserModel.findByIdAndUpdate(_id,
                 {
                     $set: userData,
                 },
@@ -83,6 +84,6 @@ Router.put("/update/:_id",
             return res.status(500).json({ error: error.message });
         }
     }
-)
+);
 
 export default Router;

@@ -1,9 +1,19 @@
 import express from "express";
 
 import { RestaurantModel } from "../../database/AllModels";
-import { ValidateId, ValidateSearchString } from "../../validation/common.validation";
+import { ValidateId } from "../../validation/common.validation";
+import { ValidateSearchString, ValidateRestaurantCity } from "../../validation/restaurant.validation";
 
 const Router = express.Router();
+
+/**
+ * Route: /
+ * Desc: Create new restaurant
+ * Params: none
+ * Access: Public
+ * Method: POST
+ */
+// HomeWork
 
 /**
  * Route: /
@@ -17,6 +27,7 @@ Router.get("/", async (req, res) => {
     try {
         // http://localhost:4000/restaurant/?city=mumbai
         const { city } = req.query;
+        await ValidateRestaurantCity(req.query);
 
         const restaurants = await RestaurantModel.find({ city });
 
@@ -78,7 +89,7 @@ Router.get("/search/:searchString", async (req, res) => {
             name: { $regex: searchString, $options: "i" }
         });
 
-        if (restaurant.length === 0) {
+        if (!restaurant.length === 0) {
             return res.status(404).json({ error: `No restaurant matched with ${searchString}` });
         }
         return res.status(200).json({ restaurant });

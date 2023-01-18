@@ -10,6 +10,15 @@ var _user = require("../../database/user");
 var _auth = require("../../validation/auth.validation");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const Router = _express.default.Router();
+
+/**
+ * Route: /signup
+ * Des: Create new account
+ * Params: none
+ * Access: Public
+ * Method: POST
+ */
+
 Router.post("/signup", async (req, res) => {
   try {
     await (0, _auth.ValidateSignup)(req.body.credentials);
@@ -26,6 +35,15 @@ Router.post("/signup", async (req, res) => {
     });
   }
 });
+
+/**
+ * Route: /signin
+ * Des: Login to existing account
+ * Params: none
+ * Access: Public
+ * Method: POST
+ */
+
 Router.post("/signin", async (req, res) => {
   try {
     await (0, _auth.ValidateSignin)(req.body.credentials);
@@ -49,9 +67,9 @@ Router.get('/google', _passport.default.authenticate('google', {
 Router.get("/google/callback", _passport.default.authenticate("google", {
   failureRedirect: "/"
 }), (req, res) => {
-  return res.status(200).json({
-    token: req.session.passport.user.token
-  });
+  // return res.status(200).json({ token: req.session.passport.user.token });
+
+  return res.redirect(`http://localhost:3000/google/${req.session.passport.user.token}`);
 });
 var _default = Router;
 exports.default = _default;

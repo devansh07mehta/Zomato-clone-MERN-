@@ -10,8 +10,7 @@ var _jsonwebtoken = _interopRequireDefault(require("jsonwebtoken"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const UserSchema = new _mongoose.default.Schema({
   fullname: {
-    type: String,
-    required: true
+    type: String
   },
   email: {
     type: String,

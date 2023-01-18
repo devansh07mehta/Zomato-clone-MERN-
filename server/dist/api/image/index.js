@@ -12,7 +12,7 @@ var _s = require("../../utils/s3");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const Router = _express.default.Router();
 
-// configure multer
+// multer configure
 const storage = _multer.default.memoryStorage();
 const upload = (0, _multer.default)({
   storage
@@ -20,7 +20,7 @@ const upload = (0, _multer.default)({
 
 /**
  * Route:  /:_id
- * Description: Get image based on their IDs
+ * Description: Get image details based on their IDs
  * Params: _id
  * Access: Public
  * Method: GET
@@ -41,7 +41,7 @@ Router.get("/:_id", async (req, res) => {
 
 /**
  * Route:  /
- * Description:  Upload given image to s3 n db
+ * Description:  Upload given image to s3 bucket and save file link to mongoDB
  * Params: none
  * Access: Public
  * Method: POST
@@ -51,12 +51,13 @@ Router.post("/", upload.single("file"), async (req, res) => {
   try {
     const file = req.file;
     const bucketOptions = {
-      Bucket: "zomato-clone",
+      Bucket: "zomato-clone-11022",
       Key: file.originalname,
       Body: file.buffer,
       ContentType: file.mimetype,
-      ACL: "public-read"
+      ACL: "public-read" // Access Control List
     };
+
     const uploadImage = await (0, _s.s3upload)(bucketOptions);
 
     // Uploading images to db

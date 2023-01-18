@@ -1,6 +1,5 @@
 import express from "express";
-import { ImageModel } from "../../database/image";
-import { MenuModel } from "../../database/menu";
+import { MenuModel, ImageModel } from "../../database/AllModels";
 import { ValidateId } from "../../validation/common.validation";
 
 const Router = express.Router();
@@ -30,7 +29,7 @@ Router.get("/list/:_id", async (req, res) => {
 
 /**
  * Route: /image/:_id
- * Description: Get all the menu images with their restaurant ids
+ * Description: Get all list of menu images with their restaurant ids
  * Params: _id
  * Acess: Public
  * Method: GET

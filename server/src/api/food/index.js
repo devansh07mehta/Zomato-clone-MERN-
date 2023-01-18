@@ -1,16 +1,25 @@
 import express from "express";
 
-import { FoodModel } from "../../database/food";
+import { FoodModel } from "../../database/AllModels";
 import { ValidateCategory, ValidateId } from "../../validation/common.validation";
 
 const Router = express.Router();
 
 /**
  * Route: /:_id
+ * Des: Create New Food Item
+ * Params: none
+ * Access: Public
+ * Method: POST
+ */
+// Homework
+
+/**
+ * Route: /:_id
  * Description: Get food based on id
  * Params: _id
- * Access: public
- * Method: Get
+ * Access: Public
+ * Method: GET
  */
 
 Router.get("/:_id", async (req, res) => {
@@ -32,7 +41,7 @@ Router.get("/:_id", async (req, res) => {
  * Description: Get all foods based on particular restaurant
  * Params:  _id
  * Access: Public
- * Method: Get
+ * Method: GET
  */
 
 Router.get("/r/:_id", async (req, res) => {
@@ -42,6 +51,9 @@ Router.get("/r/:_id", async (req, res) => {
         const foods = await FoodModel.find({
             restaurant: _id
         });
+
+        // task: food not found return statement
+
         if (!foods) {
             return res.status(404).json({ message: "Restaurant doesn't exist hence food items within it cannot be found!!" });
         }
@@ -56,7 +68,7 @@ Router.get("/r/:_id", async (req, res) => {
  * Description: Get all foods based on particular category
  * Params: category
  * Access: Public
- * Method: Get
+ * Method: GET
  */
 
 Router.get("/c/:category", async (req, res) => {

@@ -13,7 +13,7 @@ const Router = express.Router();
  * Method: GET
  */
 
-Router.get("/", async (req, res) => {
+Router.get("/:resId", async (req, res) => {
     try {
         const { resId } = req.params;
         const reviews = await ReviewModel.find({ restaurants: resId }).sort({

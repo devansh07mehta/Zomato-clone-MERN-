@@ -16,4 +16,4 @@ export const s3Upload = (options) => {
             return resolve(data);
         });
     });
-}
+};

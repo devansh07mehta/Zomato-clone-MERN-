@@ -1,6 +1,6 @@
 import express from "express";
-import passport, { use } from "passport";
-import { OrderModel } from "../../database/order";
+import passport from "passport";
+import { OrderModel } from "../../database/AllModels";
 import { ValidateId } from "../../validation/common.validation";
 
 const Router = express.Router();

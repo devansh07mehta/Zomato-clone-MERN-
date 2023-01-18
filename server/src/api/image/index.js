@@ -8,13 +8,13 @@ import { s3upload } from "../../utils/s3";
 
 const Router = express.Router();
 
-// configure multer
+// multer configure
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
 /**
  * Route:  /:_id
- * Description: Get image based on their IDs
+ * Description: Get image details based on their IDs
  * Params: _id
  * Access: Public
  * Method: GET
@@ -31,7 +31,7 @@ Router.get("/:_id", async (req, res) => {
 
 /**
  * Route:  /
- * Description:  Upload given image to s3 n db
+ * Description:  Upload given image to s3 bucket and save file link to mongoDB
  * Params: none
  * Access: Public
  * Method: POST
@@ -42,20 +42,22 @@ Router.post("/", upload.single("file") ,async (req, res) => {
         const file = req.file;
 
         const bucketOptions = {
-            Bucket: "zomato-clone",
+            Bucket: "zomato-clone-11022",
             Key: file.originalname,
             Body: file.buffer,
             ContentType: file.mimetype,
-            ACL: "public-read"
-        }
+            ACL: "public-read" // Access Control List
+        };
 
         const uploadImage = await s3upload(bucketOptions);
 
         // Uploading images to db
         const dbUpload = await ImageModel.create({
-            images: [{
-                location: uploadImage.location
-            }]
+            images: [
+                {
+                    location: uploadImage.location
+                },
+            ],
         });
 
         // return res.status(200).json({ uploadImage });

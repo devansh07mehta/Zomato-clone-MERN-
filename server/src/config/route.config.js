@@ -24,5 +24,5 @@ export default (passport) => {
                 throw new Error(error);
             }
         })
-    )
-}
+    );
+};
