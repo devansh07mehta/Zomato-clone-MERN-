@@ -19,7 +19,7 @@ const FoodSchema = new _mongoose.default.Schema({
     type: Boolean,
     required: true
   },
-  isContainsEggs: {
+  isContainsEgg: {
     type: Boolean,
     required: true
   },
@@ -40,7 +40,7 @@ const FoodSchema = new _mongoose.default.Schema({
     type: _mongoose.default.Types.ObjectId,
     ref: "foods"
   }],
-  retaurant: {
+  restaurant: {
     type: _mongoose.default.Types.ObjectId,
     ref: "restaurants",
     required: true
