@@ -32,7 +32,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://zomato-clone-cxgx.onrender.com/",
+  "proxy": "https://zomato-server-6ql9.onrender.com/",
   "eslintConfig": {
     "extends": [
       "react-app",
