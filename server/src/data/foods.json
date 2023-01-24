@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "6166f660db8b2b72dd9de1d2"
+  },
+  "addOns": "[]",
+  "category": "[\"Veg\",\"NonVeg\"]",
+  "description": "A tikki delight: Potato and peas patty topped with veg sauce, ketchup, tomatoes and onions with toasted buns.",
+  "isContainsEgg": false,
+  "isVeg": false,
+  "name": "McAloo Tikki™ Burger",
+  "photos": {
+    "$oid": "6161a397a8bb5a753a157e5d"
+  },
+  "price": "200",
+  "restaurant": {
+    "$oid": "61619f4fa8bb5a753a157e5c"
+  }
+}]

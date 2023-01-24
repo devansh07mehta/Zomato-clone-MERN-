@@ -1,0 +1,84 @@
+[{
+  "_id": {
+    "$oid": "61619f4fa8bb5a753a157e5c"
+  },
+  "address": "61/34, 1st Floor, New Rohtak Road, Karol Bagh, New Delhi",
+  "amenties": [
+    ""
+  ],
+  "averageCost": 300,
+  "city": "Bangalore",
+  "contactNumber": "+91958425456",
+  "cuisine": [
+    ""
+  ],
+  "mapLocation": "28.6581637791,77.1935084090",
+  "menu": {
+    "$oid": "6166f8b0db8b2b72dd9de1d4"
+  },
+  "menuImages": {
+    "$oid": "6161a397a8bb5a753a157e5d"
+  },
+  "name": "Domino's Pizza",
+  "photos": {
+    "$oid": "6161a397a8bb5a753a157e5d"
+  },
+  "popularDishes": [
+    ""
+  ],
+  "restaurantTimings": "11am - 11pm",
+  "reviews": {
+    "$oid": "61619f4fa8bb5a753a157e5c"
+  },
+  "website": "dominos.com"
+},{
+  "_id": {
+    "$oid": "618939a2fc13ae3ceb00039c"
+  },
+  "address": "4490 Fair Oaks Hill",
+  "amenties": "[\"Free Wi-Fi\",\"AC\"]",
+  "averageCost": 389,
+  "city": "NCR",
+  "contactNumber": "0407920870",
+  "cuisine": "[\"Chinese\"]",
+  "mapLocation": "-6.9209",
+  "menu": {
+    "$oid": "6166f8b0db8b2b72dd9de1d4"
+  },
+  "menuImages": {
+    "$oid": "6161a397a8bb5a753a157e5d"
+  },
+  "name": "ggolly1Pizza",
+  "photos": {
+    "$oid": "6161a397a8bb5a753a157e5d"
+  },
+  "popularDishes": "[\"Biryani\"]",
+  "restaurantTimings": "3:45 AM",
+  "reviews": "[]",
+  "website": "biglobe.ne.jp"
+},{
+  "_id": {
+    "$oid": "61893bf1cecd4c818954dc36"
+  },
+  "address": "4490 Fair Oaks Hill",
+  "amenties": "[\"Free Wi-Fi\",\"AC\"]",
+  "averageCost": 389,
+  "city": "NCR",
+  "contactNumber": "0407920870",
+  "cuisine": "[\"Chinese\"]",
+  "mapLocation": "-6.9209",
+  "menu": {
+    "$oid": "6166f8b0db8b2b72dd9de1d4"
+  },
+  "menuImages": {
+    "$oid": "6161a397a8bb5a753a157e5d"
+  },
+  "name": "as sadfasdf Pizza",
+  "photos": {
+    "$oid": "6161a397a8bb5a753a157e5d"
+  },
+  "popularDishes": "[\"Biryani\"]",
+  "restaurantTimings": "3:45 AM",
+  "reviews": "[]",
+  "website": "biglobe.ne.jp"
+}]

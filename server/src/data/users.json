@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "632f12721c1512bfdbbae843"
+  },
+  "__v": 0,
+  "address": "[]",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1664029298949"
+    }
+  },
+  "email": "test@email.com",
+  "fullName": "Rohan",
+  "password": "$2a$08$W.h3yP1/h9TI18In2UiPzOeS9AxtIn./qnrDi..8.2caQteAiUSm.",
+  "phoneNumber": "[1232342421]",
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1664290686164"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "6335b9377a6806c6b1d80117"
+  },
+  "__v": 0,
+  "address": "[]",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1664465207492"
+    }
+  },
+  "email": "test1@email.com",
+  "fullName": "Rohan Kinnal",
+  "password": "$2a$08$teu.KkMpDlz/mXIZOMc/y.fKmbuGNbWPWLnNuQFwcf4C/EPIbNAa2",
+  "phoneNumber": "[]",
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1664465207492"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "63385b8f6e97c24aeada1576"
+  },
+  "__v": 0,
+  "address": "[]",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1664637839123"
+    }
+  },
+  "email": "rohankinnal1917@gmail.com",
+  "fullName": "Rohan K",
+  "phoneNumber": "[]",
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1664637839123"
+    }
+  }
+}]

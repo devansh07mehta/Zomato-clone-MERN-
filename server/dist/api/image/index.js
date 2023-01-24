@@ -51,19 +51,19 @@ Router.post("/", upload.single("file"), async (req, res) => {
   try {
     const file = req.file;
     const bucketOptions = {
-      Bucket: "zomato-clone-11022",
+      Bucket: "zomato-master-a0721",
       Key: file.originalname,
       Body: file.buffer,
       ContentType: file.mimetype,
       ACL: "public-read" // Access Control List
     };
 
-    const uploadImage = await (0, _s.s3upload)(bucketOptions);
+    const uploadImage = await (0, _s.s3Upload)(bucketOptions);
 
     // Uploading images to db
     const dbUpload = await _AllModels.ImageModel.create({
       images: [{
-        location: uploadImage.location
+        location: uploadImage.Location
       }]
     });
 

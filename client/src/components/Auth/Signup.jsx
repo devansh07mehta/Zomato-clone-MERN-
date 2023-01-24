@@ -2,6 +2,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 
+// redux
 import { useDispatch } from "react-redux";
 import { signUp } from "../../redux/reducers/auth/auth.action";
 import { getMySelf } from "../../redux/reducers/user/user.action";
@@ -112,7 +113,7 @@ const Signup = ({ isOpen, setIsOpen }) => {
                         className="w-full text-center bg-zomato-400 text-white px-2 rounded-lg py-2 cursor-pointer"
                         onClick={submit}
                       >
-                        Sign Up
+                        Sign In
                       </div>
                     </form>
                   </div>

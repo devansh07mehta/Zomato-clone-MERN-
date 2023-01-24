@@ -4,7 +4,7 @@ import multer from "multer";
 
 import { ImageModel } from "../../database/AllModels";
 
-import { s3upload } from "../../utils/s3";
+import { s3Upload, s3upload } from "../../utils/s3";
 
 const Router = express.Router();
 
@@ -37,25 +37,25 @@ Router.get("/:_id", async (req, res) => {
  * Method: POST
  */
 
-Router.post("/", upload.single("file") ,async (req, res) => {
+Router.post("/", upload.single("file"), async (req, res) => {
     try {
         const file = req.file;
 
         const bucketOptions = {
-            Bucket: "zomato-clone-11022",
+            Bucket: "zomato-master-a0721",
             Key: file.originalname,
             Body: file.buffer,
             ContentType: file.mimetype,
             ACL: "public-read" // Access Control List
         };
 
-        const uploadImage = await s3upload(bucketOptions);
+        const uploadImage = await s3Upload(bucketOptions);
 
         // Uploading images to db
         const dbUpload = await ImageModel.create({
             images: [
                 {
-                    location: uploadImage.location
+                    location: uploadImage.Location
                 },
             ],
         });

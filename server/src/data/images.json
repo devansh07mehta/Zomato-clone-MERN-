@@ -1,0 +1,68 @@
+[{
+  "_id": {
+    "$oid": "6161a397a8bb5a753a157e5d"
+  },
+  "images": [
+    {
+      "location": "https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/6/2017/11/04133712/waterfall.jpg"
+    },
+    {
+      "location": "https://shapeai-zomato-abcd.s3.ap-south-1.amazonaws.com/mongoDb%20Aggregation.png"
+    },
+    {
+      "location": "https://shapeai-zomato-abcd.s3.ap-south-1.amazonaws.com/mongoDb%20Aggregation.png"
+    },
+    {
+      "location": "https://shapeai-zomato-abcd.s3.ap-south-1.amazonaws.com/mongoDb%20Aggregation.png"
+    },
+    {
+      "location": "https://shapeai-zomato-abcd.s3.ap-south-1.amazonaws.com/mongoDb%20Aggregation.png"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "63370f8c40c3b4298c9aac42"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1664552844779"
+    }
+  },
+  "images": [
+    {
+      "location": "https://zomato-clone-10567.s3.ap-south-1.amazonaws.com/venmoLogo.png",
+      "_id": {
+        "$oid": "63370f8c40c3b4298c9aac43"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1664552844779"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "6337126b390af4be4f0c92dc"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1664553579841"
+    }
+  },
+  "images": [
+    {
+      "location": "https://zomato-clone-10567.s3.ap-south-1.amazonaws.com/hmritm.jpg",
+      "_id": {
+        "$oid": "6337126b390af4be4f0c92dd"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1664553579841"
+    }
+  }
+}]

@@ -3,6 +3,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import { IoMdArrowDropup, IoMdArrowDropright } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
+// redux
 import { useSelector } from "react-redux";
 
 // components

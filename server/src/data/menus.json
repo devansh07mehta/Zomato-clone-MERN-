@@ -1,0 +1,7 @@
+[{
+  "_id": "6166f8b0db8b2b72dd9de1d4",
+  "menus": "[{\"name\":\"Recommended\",\"items\":[{\"$oid\":\"6166f660db8b2b72dd9de1d2\"}]}]",
+  "recommended": {
+    "$oid": "6166f660db8b2b72dd9de1d2"
+  }
+}]

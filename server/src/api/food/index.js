@@ -12,7 +12,23 @@ const Router = express.Router();
  * Access: Public
  * Method: POST
  */
-// Homework
+Router.post("/", async (req, res) => {
+    try {
+        const { FoodData } = await req.body;
+        const FoodDetails = await FoodModel.findOne(FoodData);
+        if (FoodDetails) {
+            return res.status(404).json({
+                success: false,
+                message: "Food Details already exists in Db"
+            });
+        }
+
+        const FoodItem = await FoodModel.create(FoodData);
+        return res.status(200).json({ FoodItem });
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+});
 
 /**
  * Route: /:_id
