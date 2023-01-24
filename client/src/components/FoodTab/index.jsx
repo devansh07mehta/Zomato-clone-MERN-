@@ -8,7 +8,7 @@ import classnames from "classnames";
 const MobileTabs = () => {
   const [allTypes] = useState([
     {
-      id: "Zomato-clone-MERN-",
+      id: "delivery",
       icon: <RiShoppingBag3Line />,
       name: "Delivery",
     },
@@ -64,7 +64,7 @@ const MobileTabs = () => {
 const LargeTabs = () => {
   const [allTypes] = useState([
     {
-      id: "Zomato-clone-MERN-",
+      id: "delivery",
       imageDefault:
         "https://b.zmtcdn.com/data/o2_assets/246bbd71fbba420d5996452be3024d351616150055.png",
       imageActive:

@@ -62,7 +62,7 @@ Router.get(
         // return res.status(200).json({ token: req.session.passport.user.token });
 
         return res.redirect(
-            `https://devansh07mehta.github.io/Zomato-clone-MERN-/google/${req.session.passport.user.token}`
+            `${process.env.REACT_APP_CLIENT_URL}google/${req.session.passport.user.token}`
         );
     }
 );

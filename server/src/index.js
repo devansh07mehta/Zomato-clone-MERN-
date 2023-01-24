@@ -30,7 +30,7 @@ const zomato = express();
 
 // adding additional passport configuration
 
-zomato.use(cors({ origin: "https://devansh07mehta.github.io/Zomato-clone-MERN-/" }));
+zomato.use(cors({ origin: "http://localhost:3000" }));
 zomato.use(helmet());
 
 zomato.use(express.json());
