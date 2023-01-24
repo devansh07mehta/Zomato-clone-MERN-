@@ -71,7 +71,7 @@ const RestaurantLayout = ({ children: Component, ...props }) => {
         </div>
         {Component}
       </div>
-      <CartContainer />
+      {/* <CartContainer /> */}
     </>
   );
 };

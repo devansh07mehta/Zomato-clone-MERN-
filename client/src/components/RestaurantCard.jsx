@@ -23,7 +23,7 @@ const RestaurantCard = (props) => {
   return (
     <Link
       to={`/restaurant/${props._id}/overview`}
-      // className="w-full md:w-1/2 lg:w-1/3"
+    // className="w-full md:w-1/2 lg:w-1/3"
     >
       <div className="bg-white p-4 w-full rounded-2xl transition duration-700 ease-in-out  sm:shadow-md md:shadow-none hover:drop-shadow-lg">
         <div className="w-full relative">

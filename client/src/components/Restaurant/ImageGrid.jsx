@@ -14,7 +14,7 @@ const ImageGrid = (props) => {
       <div className="hidden w-full h-96 md:flex gap-1">
         <div className="w-full h-full overflow-hidden rounded-lg">
           <img
-            src={props.images.length && props.images[1].location}
+            src={props.images.length && props.images[0].location}
             alt="restaurant"
             className="w-full h-full object-cover object-center rounded-lg"
           />
@@ -22,14 +22,14 @@ const ImageGrid = (props) => {
         <div className="w-1/4 h-full flex flex-col gap-1 overflow-hidden">
           <div className="w-full h-2/4 overflow-hidden rounded-lg">
             <img
-              src={props.images.length && props.images[2].location}
+              src={props.images.length && props.images[1].location}
               alt="restaurant"
               className="w-full h-full object-cover object-center rounded-lg transition duration-700 hover:scale-110"
             />
           </div>
           <div className="w-full h-2/4 overflow-hidden rounded-lg">
             <img
-              src={props.images.length && props.images[3].location}
+              src={props.images.length && props.images[2].location}
               alt="restaurant"
               className="w-full h-full object-cover object-center rounded-lg transition duration-700 hover:scale-110"
             />
@@ -38,7 +38,7 @@ const ImageGrid = (props) => {
         <div className="w-1/4 h-full flex flex-col gap-1 overflow-hidden">
           <div className="w-full h-2/4 relative">
             <img
-              src={props.images.length && props.images[4].location}
+              src={props.images.length && props.images[3].location}
               alt="restaurant"
               className="w-full h-full object-cover object-center rounded-lg"
             />
@@ -49,7 +49,7 @@ const ImageGrid = (props) => {
           </div>
           <div className="w-full h-2/4 relative">
             <img
-              src={props.images.length && props.images[5].location}
+              src={props.images.length && props.images[4].location}
               alt="restaurant"
               className="w-full h-full object-cover object-center rounded-lg"
             />

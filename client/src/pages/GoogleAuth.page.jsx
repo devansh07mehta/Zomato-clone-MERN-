@@ -12,7 +12,7 @@ const GoogleAuth = () => {
 
   useEffect(() => {
     if (token) {
-      dispatch(googleAuth(token)).then(() => navigate("/delivery"));
+      dispatch(googleAuth(token)).then(() => navigate("/Zomato-clone-MERN-"));
     }
   }, [token]);
 
