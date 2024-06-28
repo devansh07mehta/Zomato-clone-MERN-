@@ -1,4 +1,4 @@
-import job from '../cron';
+import job from './cron';
 import "./App.css";
 import { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
