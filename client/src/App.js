@@ -1,4 +1,3 @@
-import job from './cron';
 import "./App.css";
 import { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
@@ -22,7 +21,6 @@ import { getMySelf } from "./redux/reducers/user/user.action";
 import { getCart } from "./redux/reducers/cart/cart.action";
 
 function App() {
-  job.start();
   const dispatch = useDispatch();
 
   useEffect(() => {

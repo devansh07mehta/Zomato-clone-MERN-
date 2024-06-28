@@ -1,5 +1,6 @@
 "use strict";
 
+var _cron = _interopRequireDefault(require("./cron"));
 var _express = _interopRequireDefault(require("express"));
 var _dotenv = _interopRequireDefault(require("dotenv"));
 var _passport = _interopRequireDefault(require("passport"));
@@ -22,6 +23,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // Database Connection
 
+_cron.default.start();
 _dotenv.default.config();
 (0, _route.default)(_passport.default); //Call the private route
 (0, _google.default)(_passport.default);
@@ -30,7 +32,7 @@ const zomato = (0, _express.default)();
 // adding additional passport configuration
 
 zomato.use((0, _cors.default)({
-  origin: "http://localhost:3000"
+  origin: "https://zomato-client.onrender.com"
 }));
 zomato.use((0, _helmet.default)());
 zomato.use(_express.default.json());
