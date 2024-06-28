@@ -1,3 +1,4 @@
+import job from "../cron";
 import express from "express";
 import dotenv from "dotenv";
 import passport from "passport";
@@ -21,6 +22,7 @@ import Order from "./api/order";
 import Review from "./api/review";
 import Image from "./api/image";
 
+job.start();
 dotenv.config();
 
 PrivateRouteConfig(passport); //Call the private route
