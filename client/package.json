@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.2",
     "classnames": "^2.3.2",
+    "cron": "^3.1.7",
     "dayjs": "^1.11.7",
     "leaflet": "^1.9.3",
     "react": "^18.2.0",
