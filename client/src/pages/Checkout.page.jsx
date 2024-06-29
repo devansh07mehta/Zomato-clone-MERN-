@@ -28,7 +28,7 @@ const Checkout = () => {
 
   const payNow = () => {
     let options = {
-      key: "rzp_test_q1aD8S4CGOEb75",
+      key: "rzp_test_Fom9DOmbHqxhzy",
       amount:
         cart.reduce((total, current) => total + current.totalPrice, 0) * 100,
       currency: "INR",
