@@ -4,6 +4,9 @@ import { BsShieldLockFill } from "react-icons/bs";
 // Layout
 import CheckoutLayout from "../layouts/Checkout.layout";
 
+// razorpay
+import Razorpay from "razorpay"
+
 // components
 import FoodItem from "../components/Cart/FoodItem";
 import AddressList from "../components/Checkout/AddressList";
@@ -27,6 +30,11 @@ const Checkout = () => {
   ];
 
   const payNow = () => {
+    if (!window.Razorpay) {
+      alert("Razorpay SDK not loaded");
+      return;
+    }
+
     let options = {
       key: "rzp_test_Fom9DOmbHqxhzy",
       amount:
@@ -34,6 +42,8 @@ const Checkout = () => {
       currency: "INR",
       name: "Zomato Master",
       description: "Fast Delivery Service",
+      image:
+        "https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png",
       handler: (data) => {
         alert("Payment Successful");
         console.log(data);
@@ -47,7 +57,7 @@ const Checkout = () => {
       },
     };
 
-    let razorpay = new window.Razorpay({ options });
+    let razorpay = new window.Razorpay(options);
     razorpay.open();
   };
 
