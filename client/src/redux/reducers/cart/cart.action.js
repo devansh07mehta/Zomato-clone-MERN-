@@ -7,7 +7,6 @@ import {
   EMPTY_CART
 } from "./cart.type";
 
-import { useHistory } from 'react-router-dom';
 
 export const getCart = () => async (dispatch) => {
   try {
@@ -67,9 +66,8 @@ export const deleteCart = (foodId) => async (dispatch) => {
   }
 };
 
-export const emptyCart = () => async (dispatch) => {
+export const emptyCart = (history) => async (dispatch) => {
   try {
-    const history = useHistory();
     let cartData = { cart: [] };
 
     if (localStorage.zomatoCart) {
