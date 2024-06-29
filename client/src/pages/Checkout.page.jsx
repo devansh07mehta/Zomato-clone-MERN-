@@ -4,9 +4,6 @@ import { BsShieldLockFill } from "react-icons/bs";
 // Layout
 import CheckoutLayout from "../layouts/Checkout.layout";
 
-// razorpay
-import Razorpay from "razorpay"
-
 // components
 import FoodItem from "../components/Cart/FoodItem";
 import AddressList from "../components/Checkout/AddressList";
