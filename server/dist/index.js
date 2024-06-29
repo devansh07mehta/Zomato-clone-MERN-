@@ -1,6 +1,6 @@
 "use strict";
 
-var _cron = _interopRequireDefault(require("./cron"));
+var _cron = _interopRequireDefault(require("../cron"));
 var _express = _interopRequireDefault(require("express"));
 var _dotenv = _interopRequireDefault(require("dotenv"));
 var _passport = _interopRequireDefault(require("passport"));

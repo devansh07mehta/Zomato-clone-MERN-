@@ -1,4 +1,4 @@
-import job from "./cron";
+import job from "../cron";
 import express from "express";
 import dotenv from "dotenv";
 import passport from "passport";
