@@ -11,7 +11,7 @@ const CheckoutNavbar = () => {
 
   return (
     <>
-      <nav className="p-4 flex bg-white shadow-md w-full items-center">
+      <nav className="p-2 flex bg-white shadow-md w-full items-center">
         <div className="container px-4 md:px-20 mx-auto">
           <div className="flex items-center justify-between w-full">
             <AiOutlineArrowLeft
@@ -28,7 +28,7 @@ const CheckoutNavbar = () => {
               </Link>
             </div>
             <div className="flex items-center justify-center gap-3">
-              <div className="border border-gray-300 text-zomato-400 w-10 h-10 rounded-full overflow-hidden">
+              <div className="border border-gray-300 text-zomato-400 w-6 h-6 rounded-full overflow-hidden">
                 <img
                   src="/images/avatar.png"
                   alt=""

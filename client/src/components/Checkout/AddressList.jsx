@@ -6,7 +6,7 @@ const AddressList = (props) => {
   const [selected, setSelected] = useState(props.address[0]);
 
   return (
-    <div className="w-full px-4 py-16">
+    <div className="w-full px-4 py-4">
       <div className="mx-auto w-full max-w-md">
         <RadioGroup value={selected} onChange={setSelected}>
           <RadioGroup.Label className="sr-only">
@@ -18,16 +18,14 @@ const AddressList = (props) => {
                 key={item.name}
                 value={item}
                 className={({ active, checked }) =>
-                  `${
-                    active
-                      ? "ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-zomato-300"
-                      : ""
+                  `${active
+                    ? "ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-zomato-300"
+                    : ""
                   }
-              ${
-                checked
-                  ? "bg-zomato-100 bg-opacity-75 text-zomato-600"
-                  : "bg-white"
-              }
+              ${checked
+                    ? "bg-zomato-100 bg-opacity-75 text-zomato-600"
+                    : "bg-white"
+                  }
                 relative flex cursor-pointer rounded-lg px-5 py-4 shadow-md focus:outline-none`
                 }
               >
@@ -38,17 +36,15 @@ const AddressList = (props) => {
                         <div className="text-sm">
                           <RadioGroup.Label
                             as="p"
-                            className={`font-medium  ${
-                              checked ? "text-zomato-600" : "text-gray-900"
-                            }`}
+                            className={`font-medium  ${checked ? "text-zomato-600" : "text-gray-900"
+                              }`}
                           >
                             {item.name}
                           </RadioGroup.Label>
                           <RadioGroup.Description
                             as="span"
-                            className={`inline ${
-                              checked ? "text-zomato-500" : "text-gray-500"
-                            }`}
+                            className={`inline ${checked ? "text-zomato-500" : "text-gray-500"
+                              }`}
                           >
                             <span>{item.address}</span>{" "}
                           </RadioGroup.Description>

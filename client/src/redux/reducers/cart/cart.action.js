@@ -4,7 +4,10 @@ import {
   DELETE_FROM_CART,
   INCREMENT_QUANTITY,
   DECREMENT_QUANTITY,
+  EMPTY_CART
 } from "./cart.type";
+
+import { useHistory } from 'react-router-dom';
 
 export const getCart = () => async (dispatch) => {
   try {
@@ -64,6 +67,27 @@ export const deleteCart = (foodId) => async (dispatch) => {
   }
 };
 
+export const emptyCart = () => async (dispatch) => {
+  try {
+    const history = useHistory();
+    let cartData = { cart: [] };
+
+    if (localStorage.zomatoCart) {
+      const { cart } = JSON.parse(localStorage.getItem("zomatoCart"));
+      cartData.cart = cart;
+    }
+
+    cartData.cart = [];
+
+    localStorage.setItem("zomatoCart", JSON.stringify({ cart: cartData.cart }));
+
+    dispatch({ type: EMPTY_CART, payload: cartData.cart });
+    history.push('/delivery');
+  } catch (error) {
+    dispatch({ type: "ERROR", payload: error });
+  }
+};
+
 export const incrementQuantity = (foodId) => async (dispatch) => {
   try {
     let cartData = { cart: [] };
@@ -76,10 +100,10 @@ export const incrementQuantity = (foodId) => async (dispatch) => {
     cartData.cart = cartData.cart.map((food) =>
       food._id === foodId
         ? {
-            ...food,
-            totalPrice: food.price * (food.quantity + 1),
-            quantity: food.quantity + 1,
-          }
+          ...food,
+          totalPrice: food.price * (food.quantity + 1),
+          quantity: food.quantity + 1,
+        }
         : food
     );
 
@@ -103,10 +127,10 @@ export const decrementQuantity = (foodId) => async (dispatch) => {
     cartData.cart = cartData.cart.map((food) =>
       food._id === foodId
         ? {
-            ...food,
-            totalPrice: food.price * (food.quantity - 1),
-            quantity: food.quantity - 1,
-          }
+          ...food,
+          totalPrice: food.price * (food.quantity - 1),
+          quantity: food.quantity - 1,
+        }
         : food
     );
 

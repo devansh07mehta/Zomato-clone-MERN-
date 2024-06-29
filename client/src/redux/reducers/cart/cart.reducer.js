@@ -4,6 +4,7 @@ import {
   DELETE_FROM_CART,
   INCREMENT_QUANTITY,
   DECREMENT_QUANTITY,
+  EMPTY_CART,
 } from "./cart.type";
 
 const initialState = {
@@ -27,6 +28,11 @@ const cartReducer = (state = initialState, action) => {
         ...state,
         cart: action.payload,
       };
+    case EMPTY_CART:
+      return {
+        ...state,
+        cart: action.payload,
+      }
     case INCREMENT_QUANTITY:
       return {
         ...state,

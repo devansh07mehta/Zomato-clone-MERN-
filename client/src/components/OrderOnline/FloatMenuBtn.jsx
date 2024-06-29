@@ -11,7 +11,7 @@ const FloatMenuBtn = (props) => {
   const toggleMenu = () => setIsClicked((prev) => !prev);
 
   return (
-    <div className="fixed z-30 w-8/12 flex flex-col gap-3 items-end bottom-2 right-52 md:hidden">
+    <div className="fixed z-30 w-8/12 flex flex-col gap-3 items-center bottom-2 md:hidden">
       {isClicked && (
         <div className="p-3 bg-white h-48 overflow-y-scroll drop-shadow-md rounded-md">
           {props.menu.map((item, index) => (
