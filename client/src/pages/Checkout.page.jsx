@@ -11,12 +11,15 @@ import AddressList from "../components/Checkout/AddressList";
 import { emptyCart } from "../redux/reducers/cart/cart.action";
 // redux
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
   const cart = useSelector((globalState) => globalState.cart.cart);
   const user = useSelector((globalState) => globalState.user);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const continueToEmptyCart = () => navigate("/checkout/orders");
 
   const address = [
     {
@@ -46,7 +49,7 @@ const Checkout = () => {
         "https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png",
       handler: (data) => {
         alert("Payment Successful");
-        dispatch(emptyCart());
+        dispatch(emptyCart(continueToEmptyCart));
         console.log(data);
       },
       prefill: {

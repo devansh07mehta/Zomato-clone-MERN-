@@ -66,7 +66,7 @@ export const deleteCart = (foodId) => async (dispatch) => {
   }
 };
 
-export const emptyCart = (history) => async (dispatch) => {
+export const emptyCart = (navigateCallback) => async (dispatch) => {
   try {
     let cartData = { cart: [] };
 
@@ -80,7 +80,9 @@ export const emptyCart = (history) => async (dispatch) => {
     localStorage.setItem("zomatoCart", JSON.stringify({ cart: cartData.cart }));
 
     dispatch({ type: EMPTY_CART, payload: cartData.cart });
-    history.push('/delivery');
+    if (navigateCallback && typeof navigateCallback === "function") {
+      navigateCallback();
+    }
   } catch (error) {
     dispatch({ type: "ERROR", payload: error });
   }
