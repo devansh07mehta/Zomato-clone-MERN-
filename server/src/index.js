@@ -32,7 +32,7 @@ const zomato = express();
 
 // adding additional passport configuration
 
-zomato.use(cors({ origin: "https://zomato-client.onrender.com" }));
+zomato.use(cors({ origin: "https://zomato-client-7qk7.onrender.com/" }));
 zomato.use(helmet());
 
 zomato.use(express.json());
