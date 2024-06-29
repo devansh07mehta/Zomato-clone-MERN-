@@ -19,7 +19,7 @@ const Checkout = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const continueToEmptyCart = () => navigate("/checkout/orders");
+  const continueToEmptyCart = () => navigate("/delivery");
 
   const address = [
     {
